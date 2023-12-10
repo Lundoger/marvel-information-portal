@@ -10,7 +10,7 @@ My compact web app is a concise information portal dedicated to Marvel superhero
 # Pages:
 - Home Page with character list
 - Comics Page with comics list
-- Single COmic Page
+- Single Comic Page
 - page 404
 # Preview:
 [marvel-information-portal](https://marvel-information-portal.netlify.app/)
