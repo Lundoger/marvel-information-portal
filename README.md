@@ -8,4 +8,4 @@ My compact web app is a concise information portal dedicated to Marvel superhero
 - Scss
 - Marvel API 
 # Preview:
-[]()
+[marvel-information-portal](marvel-information-portal.netlify.app)
