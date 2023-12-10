@@ -7,10 +7,10 @@ My compact web app is a concise information portal dedicated to Marvel superhero
 - RTK Query
 - Scss
 - Marvel API 
-# Preview:
-[marvel-information-portal](https://marvel-information-portal.netlify.app/)
 # Pages:
 - Home Page with character list
 - Comics Page with comics list
 - Single COmic Page
 - page 404
+# Preview:
+[marvel-information-portal](https://marvel-information-portal.netlify.app/)
