@@ -1,0 +1,50 @@
+.skeleton {
+    &__header {
+        display: flex;
+		align-items: center;
+        column-gap: rem(10);
+        align-items: center;
+    }
+    &__circle {
+		@include adaptiveValue("width", 40, 25, 0, 1200, 500);
+		@include adaptiveValue("height", 40, 25, 0, 1200, 500);
+		@include adaptiveValue("flex-basis", 40, 25, 0, 1200, 500);
+		flex-grow: 0;
+		flex-shrink: 0;
+        background-color: #C4C4C4;
+        border-radius: 100%;
+    }
+    &__mini {
+        width: 100%;
+        height: rem(16);
+        background-color: #C4C4C4;
+    }
+    &__block {
+		@include adaptiveValue("height", 35, 25, 0, 1200, 500);
+        width: 100%;
+        background-color: #C4C4C4;
+        margin-top: rem(15);
+    }
+}
+.char__select {
+	font-weight: 700;
+	@include adaptiveValue("font-size", 18, 13);
+	line-height: 1.2;
+	margin-bottom: rem(15);
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out .5s infinite
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .4
+    }
+    100% {
+        opacity: 1
+    }
+}

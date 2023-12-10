@@ -1,0 +1,74 @@
+.single-comic {
+	@include adaptiveValue("margin-top", 100, 65);
+	@include adaptiveValue("margin-bottom", 100, 30);
+	&__comic {
+	}
+}
+//========================================================================================================================================================
+.comic {
+
+	&__container {
+		& .error-img {
+			@include adaptiveValue("height", 400, 150);
+		}
+	}
+
+	&__back {
+		display: inline-block;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 18, 14);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $redColor;
+			}
+		}
+		@include adaptiveValue("margin-bottom", 40, 20);
+	}
+
+	&__item {}
+}
+.item-comic {
+	display: flex;
+	@include adaptiveValue("gap", 50, 15);
+	@media (max-width:$mobileSmall){
+		 flex-direction: column; 
+	}
+	&__image {
+		width: rem(293);
+		height: auto;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		@media (max-width:$mobileSmall){
+			width: 100%;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 30, 15);
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 24, 18);
+		font-weight: 700;
+		line-height: 1.5;	
+	}
+
+	&__desc {
+		max-width: rem(500);
+		@include adaptiveValue("font-size", 16, 13);
+		line-height: 1.2;
+	}
+
+	&__price {
+		@include adaptiveValue("font-size", 24, 18);
+		font-weight: 700;
+		line-height: 1.2;
+		color: $redColor;
+	}
+}

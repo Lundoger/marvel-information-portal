@@ -1,0 +1,88 @@
+//====================================================================================================
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+	@include adaptiveValue("padding-top", 15, 7);
+	@include adaptiveValue("padding-bottom", 15, 7);
+	z-index: 100;
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(10);
+	}
+
+	&__logo {
+		display: inline-flex;
+		align-items: center;
+		gap: rem(4);
+	}
+
+	&__logo-img-container {
+		width: rem(30);
+		height: rem(30);
+		svg {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		@media (max-width: em(700)){
+			width: rem(35);
+			height: rem(35);	  
+		}
+	}
+
+	&__logo-text {
+		font-size: rem(22);
+		font-weight: 700;
+		span {
+			color: $redColor;
+		}
+		@media (max-width: em(700)){
+			display: none;	  
+		}
+	}
+
+	&__menu {}
+}
+.menu {
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		flex-wrap: wrap;
+		&>*:not(:last-child) {
+			&::after{
+				content:'/';
+				font-weight: 700;
+				pointer-events: none;
+			}
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+	}
+
+	&__link {
+		font-weight: 700;
+		font-size: rem(18);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: rgb(107, 19, 19);
+			}
+		}
+	}
+
+	&__link--active {
+		color: $redColor!important;	
+	}
+}

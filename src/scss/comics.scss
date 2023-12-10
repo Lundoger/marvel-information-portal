@@ -1,0 +1,106 @@
+.main-comics {
+	@include adaptiveValue("margin-top", 100, 70);
+	&__comics-banner {
+		@include adaptiveValue("margin-bottom", 60, 35);
+	}
+	&__comics {
+		margin-bottom: rem(50);
+	}
+}
+//========================================================================================================================================================
+.comics-banner {
+	color: #fff;
+	&__container {
+		display: grid;
+		grid-template-columns: rem(152) 1fr rem(133);
+		background-color: $darkColor;
+		@include adaptiveValue("padding-left", 30, 15);
+		@include adaptiveValue("padding-right", 30, 15);
+		@media (max-width: em(540)){
+			grid-template-columns: rem(100) 1fr rem(100);
+		}
+		@media (max-width: em(440)){
+			grid-template-columns: 1fr rem(100);
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: rem(100);
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+	}
+	&__image--first {
+		@media (max-width: em(440)){
+			display: none;	  
+		}
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 22, 14);
+		font-weight: 700;
+		line-height: 1.55;
+		@include adaptiveValue("padding-left", 60, 15);
+		display: flex;
+		align-items: center;
+	}
+}
+//========================================================================================================================================================
+.comics {
+
+	&__container {
+		& .error-img {
+			@include adaptiveValue("height", 400, 150);
+		}
+	}
+
+	&__catalog {
+	}
+}
+.comics-catalog {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 1fr;
+	@include adaptiveValue("gap", 60, 20);
+	@media (max-width:$mobile){
+		 grid-template-columns: repeat(3, 1fr); 
+	}
+	@media (max-width:$mobileSmall){
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&__element {}
+}
+.comics-element {
+	transition: transform 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+			transform: translateY(rem(-10));
+		}
+	}
+	&__image-ibg {
+		padding-bottom: 157%;
+		margin-bottom: rem(10);
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 14, 12);
+		font-weight: 700;
+		line-height: 1.3;
+		margin-bottom: rem(5);
+	}
+
+	&__price {
+		color: $greyColor;
+		@include adaptiveValue("font-size", 14, 12);
+		text-transform: uppercase;
+		line-height: 1.3;
+	}
+}
+.content {
+
+	&__loadmore {}
+}

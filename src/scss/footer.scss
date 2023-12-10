@@ -1,0 +1,12 @@
+.footer {
+	background-color: $darkColor;
+	color: #767676;
+	@include adaptiveValue("padding-top", 40, 30);
+	@include adaptiveValue("padding-bottom", 40, 30);
+	&__container {
+		display: flex;
+		gap: rem(10);
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}

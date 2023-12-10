@@ -1,0 +1,321 @@
+//====================================================================================================
+.page {
+	margin-top: rem(62);
+	@include adaptiveValue("margin-bottom", 50, 30);
+	&__random-char {
+		@include adaptiveValue("margin-top", 100, 30);
+		margin-bottom: rem(30);
+	}
+	&__content {
+	}
+}
+
+//========================================================================================================================================================
+
+.random-char {
+
+	&__container {}
+
+	&__row {
+		display: flex;
+		box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+		@media (max-width: em(470)){
+			flex-direction: column;	  
+		}
+	}
+
+	&__half {
+		@media (min-width:em(1200)){
+			height: rem(276);	  
+		}
+		@include adaptiveValue("height", 276, 203, 1, 1200, 671); 
+		@include adaptiveValue("padding", 40, 10, 0, 1200, 768);
+		@media (min-width:em(833)){
+			flex: 0 1 50%;
+		}
+		@media (max-width: em(670)){
+			flex: 0 1 50%; 
+		}
+		& .error-img {
+			height: rem(150);
+		}
+	}
+
+	&__left {
+		display: grid;
+		align-items: center;
+		& > div{
+			align-items: center;
+		}
+		@media (max-width: em(832)) and (min-width: em(671)){
+			flex: 0 1 65%;
+		}
+	}
+
+	&__right {
+		background-color: #222222;
+		color: #fff;
+		position: relative;
+		@media (max-width: em(832)) and (min-width: em(671)){
+			flex: 0 1 35%;
+		}
+	}	
+
+	&__character {}
+
+	&__decoration-img {
+		position: absolute;
+		bottom: rem(10);
+		right: rem(-40);
+		@media (max-width: em(910)){
+			display: none;
+		}
+	}
+
+	&__flex-container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		@media (min-width:em(671)){
+			align-items: start;
+		}
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 24, 14);
+		font-weight: 700;
+		line-height: 1.2;
+		flex: 1 1 100%;
+		margin-bottom: rem(15);
+		@media (max-width: em(670)){
+			 @include adaptiveValue("font-size", 24, 14, 0, 670, 320); 
+		}
+	}
+	&__text {
+		@include adaptiveValue("font-size", 18, 14, 2, 1200, 670);
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: rem(15);
+		@media (max-width: em(670)){
+			@include adaptiveValue("font-size", 18, 12, 0, 670, 320); 
+	   }
+	}
+}
+
+.character-random {
+
+	&__row {
+		display: flex;
+		column-gap: rem(20);
+		row-gap: rem(15);
+		@media (max-width: em(670)) and (min-width: em(471)){
+			flex-direction: column;
+		}
+	}
+
+	&__image-ibg {
+		flex: 0 0 36%;
+		padding-bottom: 36%;
+		img {
+			border-radius: rem(5);
+		}
+		@media (max-width: em(670)) and (min-width: em(471)){
+			padding-bottom: 70%;  
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__name {
+		@include adaptiveValue("font-size", 22, 14);
+		font-weight: 700;
+		@include adaptiveValue("margin-bottom", 20, 10);
+		line-height: 1.5;
+		margin-bottom: rem(10);
+	}
+
+	&__desc {
+		@include adaptiveValue("font-size", 16, 12);
+		font-family: 'Roboto Condensed';
+		flex: 1 1 100%;
+		max-width: rem(280);
+		margin-bottom: rem(5);
+		line-height: 1.25;
+	}
+
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		@include adaptiveValue("column-gap", 20, 10);
+		row-gap: rem(10);
+		@media (max-width: em(500)){
+			flex-direction: column;
+			align-items: stretch;
+		}	
+	}
+
+	&__button {}
+}
+//====================================================================================================
+.content {
+
+	&__container {
+	}
+
+	&__flex-container {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		@include adaptiveValue("gap", 30, 20);
+		align-items: start;
+		@media (max-width: em(670)){
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: em(500)){
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__char-catalog {
+		& .error-img {
+			@include adaptiveValue("height", 400, 150);
+		}
+		@media (max-width: em(500)){
+			order: 2;
+		}
+	}
+
+	&__char-list {
+	}
+
+	&__char-info {
+		@media (max-width: em(500)){
+			order: 1;
+		}
+	}
+	&__loadmore {
+		transition: all 0.3s ease 0s;
+		&:disabled {
+			opacity: 0.5;
+		}
+	}
+}
+.char-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 1fr;
+	gap: rem(20);
+	@media (max-width:$tablet){
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width: em(670)){
+		grid-template-columns: 1fr;
+	}
+	&__item {}
+}
+.item-char {
+	box-shadow: rem(5) rem(5) rem(10) rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+	transition: transform 0.3s ease 0s;
+	background-color: $darkColor;
+	color: #fff;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+			background-color: #292929;
+		}
+	}
+	&--selected {
+		box-shadow: 0 rem(5) rem(20) $redColor;
+		transform: translateY(rem(-8));
+	}
+	&__image-ibg {
+		padding-bottom: 100%;
+	}
+
+	&__title {
+		@include adaptiveValue("padding", 15, 10);
+		@include adaptiveValue("font-size", 24, 18);
+		font-weight: 700;
+		line-height: 1.3;
+	}
+}
+.char-info {
+	background-color: #fff;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	@include adaptiveValue("padding", 25, 10);
+	&__character {
+		margin-bottom: rem(15);
+	}
+
+	&__desc {
+		line-height: 1.2;
+		margin-bottom: rem(15);
+	}
+
+	&__comics {
+		margin-bottom: rem(10);
+		font-weight: 700;
+		font-size: rem(18);
+	}
+
+	&__comics-list {}
+}
+.character-info {
+	&__row {
+		display: flex;
+		gap: rem(15);
+	}
+
+	&__avatar {
+		width: rem(150);
+		height: rem(150);
+		flex: 0 0 rem(150);
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 24, 18);
+		font-weight: 700;
+		line-height: 1.2;
+		flex: 1 1 100%;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		flex-wrap: wrap;
+	}
+}
+.comics-list {
+	display: flex;
+	flex-direction: column;
+	gap: rem(5);
+	&__item {
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		cursor: pointer;
+		padding: 0 rem(10);
+		line-height: 1.6;
+		transition: box-shadow 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				box-shadow: 0px 4px 4px rgba(158, 0, 18, 0.438);
+			}
+		}
+	}
+
+	&__link {}
+}

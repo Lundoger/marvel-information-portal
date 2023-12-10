@@ -1,0 +1,68 @@
+.page-404 {
+	
+	&__error-page {
+		@include adaptiveValue("margin-top", 60, 49);
+	}
+}
+.error-page {
+	position: relative;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width:$mobile){
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		color: $darkColor;
+		align-self: center;
+		@media (min-width:$mobile){
+			max-width: rem(550); 
+		}
+		& > p:nth-child(2) {
+			@include adaptiveValue("font-size", 18, 14);
+			line-height: 1.3;
+		}
+	}
+
+	&__not-found {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 40, 25);
+		margin-bottom: rem(30);
+		line-height: 1.2;
+	}
+
+	&__img {
+		width: rem(440);
+		height: rem(600);
+		flex: 0 0 rem(440);
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		@media (max-width:$mobile){
+			width: rem(440);
+			height: rem(440);
+			flex: 0 0 rem(440);
+		}
+		@media (max-width:$mobileSmall){
+			width: rem(320);
+			height: rem(320);
+			flex: 0 0 rem(320);
+		}
+	}
+
+	&__rain {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url('../assets/iron-man-rain.477626af.gif') 0 0 / cover no-repeat;
+		z-index: 100;
+		pointer-events: none;
+	}
+}
